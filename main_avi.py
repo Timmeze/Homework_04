@@ -1,35 +1,23 @@
-def create_ad(title, price, district, phone_numb):
-    district_list = {'avia', 'mosk', 'novo-savin', 'kirov', 'privol', 'vahit'}
-    district_clear = district.lower().strip()
-    if district_clear in district_list:
-        return {
-        'title' : title,
-        'price' : price,
-        'district' : district,
-        'phone_numb' : phone_numb
-    }
-    else:
-        return print('Некорректно указан район')
+from lib_avi import create_ad
 
-def add_ad(container, ad):
-    container.append(ad)
-    return container
+bike_ad = create_ad(
+    'Велосипед б/у',
+    5_000,
+    'avia',
+    '+79566745883'
+)
 
-def search_dist (container, district):
-    district_clear = district.lower().strip()
-    result = []
-    for ad in container:
-        if district in ad['district']:
-            result.append(ad)
-            continue
-    return result
+ps_ad = create_ad(
+    'Игровая приставка',
+    15_000,
+    'avvia',
+    '+79566745883'
+)
 
-def search_price (container, price):
-    result = []
-    for ad in container:
-        if price <= ad['price']:
-            result.append(ad)
-            continue
-    return result
-
+flat_ad = create_ad(
+    '1-комнатная квартира',
+    2_500_000,
+    'kirov',
+    '+79566745883'
+)
 
