@@ -37,7 +37,7 @@ def search_books(container, search):  # search - строка поиска
     return result
 
 def search_tags(container, search):
-    clear_search = search.replace("#", "").strip().lower()
+    clear_search = search.replace("#", " ").strip().lower()
     result = []
     for book in container:
         if clear_search in book['tags']:
