@@ -1,4 +1,4 @@
-from lib_avi import create_ad
+from lib_avi import create_ad, add_ad, search_dist, search_price
 
 bike_ad = create_ad(
     'Велосипед б/у',
@@ -10,7 +10,7 @@ bike_ad = create_ad(
 ps_ad = create_ad(
     'Игровая приставка',
     15_000,
-    'avvia',
+    'avia',
     '+79566745883'
 )
 
@@ -20,4 +20,13 @@ flat_ad = create_ad(
     'kirov',
     '+79566745883'
 )
+
+avito = []
+
+add_ad(avito, bike_ad)
+add_ad(avito, ps_ad)
+add_ad(avito, flat_ad)
+
+print(search_dist(avito, 'avia'))
+print(search_price(avito, 16000))
 

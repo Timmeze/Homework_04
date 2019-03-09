@@ -16,10 +16,10 @@ def add_ad(container, ad):
     return container
 
 def search_dist (container, district):
-    district_clear = district.lower().strip()
+    district_clear = district.strip().lower()
     result = []
     for ad in container:
-        if district in ad['district']:
+        if district_clear in ad['district']:
             result.append(ad)
             continue
     return result
